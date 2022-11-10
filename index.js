@@ -70,6 +70,17 @@ async function run() {
             res.send(reviews);
         })
 
+        // app.get('/reviews', async (req, res) => {
+        //     let query = {};
+        //     if (req.query._id) {
+        //         query = {
+        //             _id: req.query._id
+        //         }
+        //     }
+        //     const cursor = reviewCollection.find(query);
+        //     const reviews = await cursor.toArray();
+        //     res.send(reviews);
+        // })
 
 
         app.post('/services', async (req, res) => {
@@ -87,6 +98,15 @@ async function run() {
             res.send(result);
         })
 
+
+        app.delete('/reviews/:id', async (req, res) => {
+            const id = req.params.id;
+
+            const query = { _id: ObjectId(id) }
+            const result = await reviewCollection.deleteOne(query);
+            console.log(result);
+            res.send(result);
+        })
 
 
     }
