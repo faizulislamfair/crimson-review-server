@@ -11,13 +11,8 @@ app.use(express.json());
 
 
 
-// $setOnInsert: { StudentAdmissiondate: new Date() } }
-
-
-
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.pqumcav.mongodb.net/?retryWrites=true&w=majority`;
-// console.log(uri);
 
 
 
